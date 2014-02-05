@@ -68,8 +68,11 @@ SharedAroundMe.Views.Base = Backbone.View.extend({
   },
 
   renderMedia: function () {
-    for (var i = this.collection.models.length - 1; i >= 0; i--) {
-      var model = this.collection.models[i];
+    var models = this.collection.models;
+    this.$("header").toggleClass("no-media", !models.length)
+
+    for (var i = models.length - 1; i >= 0; i--) {
+      var model = models[i];
       var service = model.get("service");
       var type = model.get("type");
       var view;

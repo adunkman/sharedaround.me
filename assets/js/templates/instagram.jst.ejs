@@ -1,1 +1,14 @@
-<%= model.get("timestamp") %> (instagram)
+<header class="profile">
+  <img src="<%= model.avatarPath() %>" class="avatar" />
+  <h1><%= model.screenName() %> <i><%= model.fullName() %></i></h1>
+</header>
+
+<% if (model.isVideo()) { %>
+  (instagram video)
+<% } else { %>
+  <img src="<%= model.imagePath() %>" class="photo" />
+<% } %>
+
+<% if (caption = model.caption()) { %>
+  <p><%= caption %></p>
+<% } %>

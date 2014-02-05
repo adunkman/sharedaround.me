@@ -1,0 +1,35 @@
+.page-header
+  max-width()
+
+  &.no-media
+    min-height: 100%
+    margin-bottom: -100px
+
+    h1
+      padding-top: 45%
+
+  h1
+    margin: 0
+
+  buttoncolor = #1F86C4
+
+  button
+    background: buttoncolor
+    border: 0 none
+    border-radius: 3px
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7)
+    color: #fff
+    cursor: pointer
+    display: inline-block
+    font-size: 20px
+    padding: 20px 20px
+    text-decoration: none
+
+    &:hover
+      background: lighten(buttoncolor, 5%)
+
+    &:active
+      background: darken(buttoncolor, 5%)
+
+    &:active, &:focus
+      outline: 0 none

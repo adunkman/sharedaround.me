@@ -7,6 +7,9 @@ var SharedAroundMe = SharedAroundMe || {};
 SharedAroundMe.Views = SharedAroundMe.Views || {};
 
 SharedAroundMe.Views.ServiceError = Backbone.View.extend({
+  className: "item error",
+  tagName: "section",
+
   initialize: function () {
     this.render();
   },

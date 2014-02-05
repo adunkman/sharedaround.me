@@ -7,6 +7,9 @@ var SharedAroundMe = SharedAroundMe || {};
 SharedAroundMe.Views = SharedAroundMe.Views || {};
 
 SharedAroundMe.Views.Tweet = Backbone.View.extend({
+  className: "item tweet",
+  tagName: "section",
+
   initialize: function () {
     this.render();
   },

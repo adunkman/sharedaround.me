@@ -1,1 +1,10 @@
-<%= model.get("timestamp") %> (tweet)
+<header class="profile">
+  <img src="<%= model.avatarPath() %>" class="avatar" />
+  <h1><%= model.screenName() %> <i><%= model.fullName() %></i></h1>
+</header>
+
+<% if (path = model.imagePath()) { %>
+  <img src="<%= path %>" class="photo" />
+<% } %>
+
+<p><%- model.tweetHtml() %></p>
