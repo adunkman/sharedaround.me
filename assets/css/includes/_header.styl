@@ -1,35 +1,98 @@
-.page-header
-  max-width()
+.location-controls
+  height: 100%
 
-  &.no-media
-    min-height: 100%
-    margin-bottom: -100px
+  .locate
+    height = 60px
+    lines = 2
+    vertical-padding = 15px
+    font-size = (height - (2 * vertical-padding)) / 1.4
 
-    h1
-      padding-top: 45%
+    display: block
+    margin-top: -((font-size * lines + 2 * vertical-padding)/2)
+    position: absolute
+    text-align: center
+    top: 50%
+    width: 100%
 
-  h1
-    margin: 0
+    button
+      background: #aaa
+      border: 0 none
+      border-radius: 3px
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7)
+      color: #fff
+      cursor: default
+      display: inline-block
+      font-size: font-size
+      line-height: 1.4
+      opacity: 0.5
+      padding: vertical-padding 20px
+      text-decoration: none
 
-  buttoncolor = #1F86C4
+      &:active, &:focus
+        outline: 0 none
 
-  button
-    background: buttoncolor
-    border: 0 none
-    border-radius: 3px
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.7)
-    color: #fff
-    cursor: pointer
-    display: inline-block
-    font-size: 20px
-    padding: 20px 20px
-    text-decoration: none
+      &.button-enabled
+        buttoncolor = #1F86C4
 
-    &:hover
-      background: lighten(buttoncolor, 5%)
+        background: buttoncolor
+        cursor: pointer
+        opacity: 1
 
-    &:active
-      background: darken(buttoncolor, 5%)
+        &:hover
+          background: lighten(buttoncolor, 5%)
 
-    &:active, &:focus
-      outline: 0 none
+        &:active
+          background: darken(buttoncolor, 5%)
+
+      .discretionary-break
+        display: block
+
+    @media screen and (min-width: 400px)
+      lines = 1
+
+      margin-top: -((font-size * lines + 2 * vertical-padding)/2)
+
+      button .discretionary-break
+        display: inline
+
+  .error
+    height = 50px
+
+    color: #999
+    display: block
+    line-height: height
+    margin-top: -(height/2)
+    position: absolute
+    text-align: center
+    top: 50%
+    width: 100%
+
+    .frown
+      display: none
+
+    .message
+      margin: 0
+
+    .try-again
+      background: none
+      border: none
+      color: inherit
+      cursor: pointer
+      display: inline
+      font: inherit
+      padding: 0
+      text-decoration: underline
+
+      &:active, &:focus
+        color: #000
+        outline: 0 none
+
+    @media screen and (min-height: 500px)
+      .frown
+        height = 100px
+
+        display: block
+        font-size: height
+        position: absolute
+        top: -(height)
+        width: 100%

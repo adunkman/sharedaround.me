@@ -10,9 +10,13 @@
     <%- css("main.css") %>
   </head>
   <body>
-    <header class="page-header no-media">
-      <h1>shared<b>around</b>.me</h1>
-      <p>What’s being shared on the Internet around your location?</p>
+    <header class="location-controls">
+      <noscript>
+        <div class="error">
+          <div class="frown">:(</div>
+          <p class="message">JavaScript is required to determine your location.</p>
+        </div>
+      </noscript>
     </header>
 
     <aside class="status">
@@ -20,10 +24,6 @@
 
     <section class="media">
     </section>
-
-    <footer class="page-footer">
-      <p>A <a href="https://github.com/adunkman/sharedaround.me">project</a> of <a href="http://twitter.com/adunkman">@adunkman</a></p>
-    </footer>
 
     <%- js("main.js") %>
   </body>

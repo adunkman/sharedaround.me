@@ -3,12 +3,12 @@
   <h1><%= model.screenName() %> <i><%= model.fullName() %></i></h1>
 </header>
 
+<% if (caption = model.caption()) { %>
+  <p><%= caption %></p>
+<% } %>
+
 <% if (model.isVideo()) { %>
   (instagram video)
 <% } else { %>
   <img src="<%= model.imagePath() %>" class="photo" />
-<% } %>
-
-<% if (caption = model.caption()) { %>
-  <p><%= caption %></p>
 <% } %>
