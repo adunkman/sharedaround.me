@@ -1,0 +1,67 @@
+@import "../lib/variables"
+
+#javascript-missing
+  vertical-center()
+  display: block
+  padding-top: 100px
+  text-align: center
+
+  p
+    font-size: 1.2em
+    margin: 0
+    padding: 1em
+
+    &:before
+      background-size: 100%
+      background: transparent url(<%= assetPath("images/location-failure.svg") %>) 0 0 no-repeat
+      content: ""
+      display: block
+      height: 100px
+      left: 50%
+      margin-left: -50px
+      position: absolute
+      top: 0
+      width: 100px
+
+#location-services-error
+  @extend #javascript-missing
+  display: none
+
+  body.location-services-error &
+    display: block
+
+#locate-me
+  vertical-center()
+  transition-hidden()
+  padding-left: 1em
+  padding-right: 1em
+  position: absolute
+  text-align: center
+  width: 100%
+
+  button
+    -webkit-appearance: none
+    background: #fff
+    border: 0 none
+    cursor: pointer
+    font-size: 1.5em
+    line-height: 1.5
+    margin: 0
+    padding: 0.7em 1.5em
+
+  body.no-location &
+    transition-visible()
+
+#working
+  vertical-center()
+  transition-hidden()
+  line-height: 1.5
+  position: absolute
+  text-align: center
+  width: 100%
+
+  strong
+    display: block
+
+  body.locating &, body.loading &
+    transition-visible()

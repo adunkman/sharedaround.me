@@ -1,0 +1,27 @@
+vertical-center()
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+
+transition-hidden()
+  transition: all .5s
+  padding-top: 10px
+  opacity: 0
+  visibility: hidden
+
+transition-visible()
+  padding-top: 0
+  opacity: 1
+  visibility: visible
+
+transform(prop)
+  -webkit-transform: prop
+  -moz-transform: prop
+  -ms-transform: prop
+  transform: prop
+
+transition(prop...)
+  -webkit-transition: prop
+  -moz-transition: prop
+  -ms-transition: prop
+  transition: prop

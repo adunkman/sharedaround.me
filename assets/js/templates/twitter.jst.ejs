@@ -1,0 +1,12 @@
+<div class="profile">
+  <img src="<%= model.avatarPath() %>" class="avatar" />
+  <h1><%= model.screenName() %> <i><%= model.fullName() %></i></h1>
+</div>
+
+<div class="body">
+  <p><%- model.tweetHtml() %></p>
+
+  <% if (path = model.imagePath()) { %>
+    <img src="<%= path %>" class="photo" />
+  <% } %>
+</div>

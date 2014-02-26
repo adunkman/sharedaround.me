@@ -10,19 +10,25 @@
     <%- css("main.css") %>
   </head>
   <body>
-    <header class="location-controls">
-      <noscript>
-        <div class="error">
-          <div class="frown">:(</div>
-          <p class="message">JavaScript is required to determine your location.</p>
-        </div>
-      </noscript>
-    </header>
+    <noscript id="javascript-missing">
+      <p>JavaScript is required to determine your location.</p>
+    </noscript>
 
-    <aside class="status">
-    </aside>
+    <section id="location-services-error">
+      <p></p>
+    </section>
 
-    <section class="media">
+    <section id="working">
+      <p></p>
+    </section>
+
+    <section id="locate-me">
+      <button class="js-locate">What’s happening around you?</button>
+    </section>
+
+    <section id="media">
+      <button class="js-locate">Refresh Your Location</button>
+      <ol></ol>
     </section>
 
     <%- js("main.js") %>

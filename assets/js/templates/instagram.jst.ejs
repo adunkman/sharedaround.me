@@ -1,14 +1,16 @@
-<header class="profile">
+<div class="profile">
   <img src="<%= model.avatarPath() %>" class="avatar" />
   <h1><%= model.screenName() %> <i><%= model.fullName() %></i></h1>
-</header>
+</div>
 
-<% if (caption = model.caption()) { %>
-  <p><%= caption %></p>
-<% } %>
+<div class="body">
+  <% if (caption = model.caption()) { %>
+    <p><%= caption %></p>
+  <% } %>
 
-<% if (model.isVideo()) { %>
-  (instagram video)
-<% } else { %>
-  <img src="<%= model.imagePath() %>" class="photo" />
-<% } %>
+  <% if (model.isVideo()) { %>
+    (instagram video)
+  <% } else { %>
+    <img src="<%= model.imagePath() %>" class="photo" />
+  <% } %>
+</div>
