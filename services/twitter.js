@@ -25,7 +25,7 @@ module.exports = {
     var search = {
       url: "https://api.twitter.com/1.1/search/tweets.json",
       qs: {
-        q: "*",
+        q: "-RT",
         geocode: [coordinates.latitude, coordinates.longitude, "1mi"].join(","),
         count: 100
       },
