@@ -9,7 +9,7 @@ SharedAroundMe.Collections or= {}
 
 class SharedAroundMe.Collections.Media extends Backbone.Collection
   url: "/media"
-  comparator: "timestamp"
+  comparator: (m) -> -m.get("timestamp")
 
   model: (attrs, options) ->
     switch attrs.service
