@@ -10,3 +10,8 @@
     <img src="<%= path %>" class="photo" />
   <% } %>
 </div>
+
+<ul class="meta">
+  <li class="when"><time datetime="<%= model.get("timestamp").toISOString() %>" title="<%= model.get("timestamp") %>"></time></li>
+  <li class="service"><a href="<%= model.url() %>">Twitter</a></li>
+</ul>

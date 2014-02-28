@@ -10,6 +10,7 @@ class SharedAroundMe.Models.Tweet extends Backbone.Model
     data.timestamp = new Date(data.created_at)
     return data
 
+  url: () -> "https://twitter.com/#{@get("user").screen_name}/status/#{@get("id_str")}"
   screenName: () -> @get("user").screen_name
   avatarPath: () -> @get("user").profile_image_url
   fullName: () -> @get("user").name

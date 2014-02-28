@@ -1,4 +1,5 @@
 #= require vendor/jquery
+#= require vendor/jquery.timeago
 #= require vendor/underscore
 #= require vendor/backbone
 #= require views/item
@@ -19,6 +20,7 @@ class SharedAroundMe.Views.Media extends Backbone.View
 
   render: () ->
     @render_model(m) for m in @collection.models
+    @$("time").timeago()
 
   render_model: (model) ->
     view = new SharedAroundMe.Views.Item({ model })

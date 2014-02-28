@@ -10,6 +10,7 @@ class SharedAroundMe.Models.Instagram extends Backbone.Model
     data.timestamp = new Date(parseInt(data.created_time, 10) * 1000)
     return data
 
+  url: () -> @get("link")
   isVideo: () -> @get("type") is "video"
   screenName: () -> @get("user").username
   fullName: () -> @get("user").full_name

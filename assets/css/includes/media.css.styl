@@ -63,25 +63,39 @@
 
     .body
       background: #f6f6f6
-      border-bottom: 1px #aaa solid
-      padding: 1em 5px 0 5px
+      border-bottom: 1px #ddd solid
+      border-top: 1px transparent solid
+      padding: 0 5px
 
       p
         line-height: 1.4
-        margin: 0 10px 1em 10px
+        margin: 1em 10px
 
       .photo
         border-radius: 5px
         border: 1px solid rgba(0, 0, 0, 0.1)
         display: block
         max-width: 100%
-        margin: 0 auto 5px auto
+        margin: 5px auto
+
+    .meta
+      list-style-type: none
+      margin: 0
+      background: #eee
+      border-bottom: 1px #aaa solid
+      padding: 10px 15px
+
+      li
+        display: inline-block
+
+      .service:before
+        content: "via "
 
     @media (min-width: 30em)
       .profile
         border-top-left-radius: 5px
         border-top-right-radius: 5px
 
-      .body
+      .meta
         border-bottom-left-radius: 5px
         border-bottom-right-radius: 5px
