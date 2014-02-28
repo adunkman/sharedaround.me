@@ -16,4 +16,5 @@ class SharedAroundMe.Models.Instagram extends Backbone.Model
   fullName: () -> @get("user").full_name
   avatarPath: () -> @get("user").profile_picture
   imagePath: () -> @get("images").standard_resolution.url
+  videoPath: () -> @get("videos").standard_resolution.url
   caption: () -> if c = @get("caption") then c.text else ""

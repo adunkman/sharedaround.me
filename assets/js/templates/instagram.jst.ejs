@@ -9,7 +9,7 @@
   <% } %>
 
   <% if (model.isVideo()) { %>
-    (instagram video)
+    <video src="<%= model.videoPath() %>" class="video" controls></video>
   <% } else { %>
     <img src="<%= model.imagePath() %>" class="photo" />
   <% } %>
