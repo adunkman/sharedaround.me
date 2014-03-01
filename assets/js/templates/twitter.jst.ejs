@@ -1,17 +1,17 @@
 <div class="profile">
-  <img src="<%= model.avatarPath() %>" class="avatar" />
-  <h1><%= model.screenName() %> <i><%= model.fullName() %></i></h1>
+  <img src="<%= model.avatar_url() %>" class="avatar" />
+  <h1><%= model.screen_name() %> <i><%= model.full_name() %></i></h1>
 </div>
 
 <div class="body">
-  <p><%- model.tweetHtml() %></p>
+  <p><%- model.tweet_html() %></p>
 
-  <% if (path = model.imagePath()) { %>
-    <img src="<%= path %>" class="photo" />
+  <% if (model.has_image()) { %>
+    <img src="<%= model.image_url() %>" class="photo" />
   <% } %>
 </div>
 
 <ul class="meta">
-  <li class="when"><time datetime="<%= model.get("timestamp").toISOString() %>" title="<%= model.get("timestamp") %>"></time></li>
+  <li class="when"><time datetime="<%= model.iso_timestamp() %>" title="<%= model.formatted_timestamp() %>"></time></li>
   <li class="service"><a href="<%= model.url() %>">Twitter</a></li>
 </ul>

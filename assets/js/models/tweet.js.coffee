@@ -11,15 +11,16 @@ do () ->
       data.timestamp = new Date(data.created_at)
       return data
 
+    formatted_timestamp: () -> @get("timestamp").toLocaleString()
+    iso_timestamp: () -> @get("timestamp").toISOString()
     url: () -> "https://twitter.com/#{@get("user").screen_name}/status/#{@get("id_str")}"
-    screenName: () -> @get("user").screen_name
-    avatarPath: () -> @get("user").profile_image_url
-    fullName: () -> @get("user").name
+    screen_name: () -> @get("user").screen_name
+    full_name: () -> @get("user").name
+    avatar_url: () -> @get("user").profile_image_url
+    tweet_html: () -> vivify_twitter_entities(@get("text"), @get("entities"))
+    has_image: () -> @image_url()?
 
-    tweetHtml: () ->
-      vivify_twitter_entities(@get("text"), @get("entities"))
-
-    imagePath: () ->
+    image_url: () ->
       medias = @get("entities").media or []
       return m.media_url for m in medias when m.type is "photo"
 
