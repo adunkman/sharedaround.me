@@ -60,6 +60,12 @@ do () ->
 
     replacements.sort((a, b) -> a.start - b.start)
 
+    ###
+      Known issue: unicode characters (like emoji) are actually represented
+      as two characters in the string. Twitter entities consider them to be
+      one character — so we need to adjust for these characters in our index
+      calculations. Further reading: http://mzl.la/1bVdOF9
+    ###
     for r in replacements
       parts.push(text.substring(index, r.start)) if index isnt r.start
       parts.push(r.link(text.substring(r.start, r.end)))
