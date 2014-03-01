@@ -21,6 +21,7 @@ class SharedAroundMe.Views.Media extends Backbone.View
   render: () ->
     @render_model(m) for m in @collection.models
     @$("time").timeago()
+    @$("a[href^='http']").attr("target", "_blank")
 
   render_model: (model) ->
     view = new SharedAroundMe.Views.Item({ model })
