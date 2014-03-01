@@ -24,6 +24,10 @@ do () ->
       medias = @get("entities").media or []
       return m.media_url for m in medias when m.type is "photo"
 
+      urls = @get("entities").urls or []
+      regex = /^https?:\/\/(www\.)?instagram\.com\/p\/.*$/i
+      return "#{u.expanded_url}media" for u in urls when regex.test(u.expanded_url)
+
   vivify_twitter_entities = (text, entities) ->
     replacements = []
     parts = []
