@@ -43,8 +43,18 @@ do () ->
       start: e.indices[0]
       end: e.indices[1]
       link: do (e) -> (text) ->
-        search_url = "https://twitter.com/search?q=#{encodeURIComponent(text)}"
-        "<a href='#{search_url}' class='tag'>#{text}</a>"
+        encoded =
+          try
+            encodeURIComponent(text)
+          catch e
+            console.error(e)
+            false
+
+        if encoded
+          search_url = "https://twitter.com/search?q=#{encodeURIComponent(text)}"
+          "<a href='#{search_url}' class='tag'>#{text}</a>"
+        else
+          ""
 
     for e in entities.user_mentions then replacements.push
       start: e.indices[0]
